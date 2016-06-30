@@ -1,0 +1,713 @@
+################################################################################
+$ valgrind ./stack
+==5847== Memcheck, a memory error detector
+==5847== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5847== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5847== Command: ./stack
+==5847== 
+Testing stack initialisation:
+Testing completed: UNIT COMPLIES
+
+Testing push() and getStackSize():
+Testing completed: UNIT COMPLIES
+
+Testing getTop():
+Testing completed: UNIT COMPLIES
+
+Testing pop():
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5847== 
+==5847== HEAP SUMMARY:
+==5847==     in use at exit: 0 bytes in 0 blocks
+==5847==   total heap usage: 17 allocs, 17 frees, 272 bytes allocated
+==5847== 
+==5847== All heap blocks were freed -- no leaks are possible
+==5847== 
+==5847== For counts of detected and suppressed errors, rerun with: -v
+==5847== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
+$ valgrind ./queue
+==5848== Memcheck, a memory error detector
+==5848== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5848== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5848== Command: ./queue
+==5848== 
+Testing queue initialisation:
+Testing completed: UNIT COMPLIES
+
+Testing enqueue() and getQueueLength():
+Testing completed: UNIT COMPLIES
+
+Testing getHead() and dequeue():
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5848== 
+==5848== HEAP SUMMARY:
+==5848==     in use at exit: 0 bytes in 0 blocks
+==5848==   total heap usage: 14 allocs, 14 frees, 232 bytes allocated
+==5848== 
+==5848== All heap blocks were freed -- no leaks are possible
+==5848== 
+==5848== For counts of detected and suppressed errors, rerun with: -v
+==5848== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
+$ valgrind ./set
+==5849== Memcheck, a memory error detector
+==5849== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5849== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5849== Command: ./set
+==5849== 
+Testing set initialisation:
+Expected output: ∅
+Printed output:  ∅
+Testing completed: UNIT COMPLIES
+
+Testing insertElement() and getSetCardinality():
+Expected output: {-63, 2, 5, 99, 4209, 8888}
+Printed output:  {-63, 2, 5, 99, 4209, 8888}
+Testing completed: UNIT COMPLIES
+
+Testing isElement():
+Expected output: {-63, 2, 5, 99, 4209, 8888}
+Printed output:  {-63, 2, 5, 99, 4209, 8888}
+Testing completed: UNIT COMPLIES
+
+Testing removeElement():
+Expected output: ∅
+Printed output:  ∅
+Testing completed: UNIT COMPLIES
+
+Testing getSetMin() and getSetMax():
+Expected output: {10}
+Printed output:  {10}
+Testing completed: UNIT COMPLIES
+
+Testing copySet():
+Copy of an empty set: ∅
+Copy of {1}: {1}
+Copy of {2, 3}: {2, 3}
+Copy of {3, 4, 5, 6, 7}: {3, 4, 5, 6, 7}
+Copy of {6, 7, 8, 9, 10, 11, 12, 13, 14, 15}: {6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+Testing completed: UNIT COMPLIES
+
+Testing getUnion():
+∅ ∪ ∅ = ∅
+∅ ∪ {1} = {1}
+{2, 3} ∪ ∅ = {2, 3}
+{1} ∪ {2, 3} = {1, 2, 3}
+{2, 3} ∪ {3, 4, 5, 6, 7} = {2, 3, 4, 5, 6, 7}
+{3, 4, 5, 6, 7} ∪ {6, 7, 8, 9, 10, 11, 12, 13, 14, 15} = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+Testing completed: UNIT COMPLIES
+
+Testing getIntersection():
+∅ ∩ ∅ = ∅
+∅ ∩ {1} = ∅
+{2, 3} ∩ ∅ = ∅
+{1} ∩ {2, 3} = ∅
+{2, 3} ∩ {3, 4, 5, 6, 7} = {3}
+{3, 4, 5, 6, 7} ∩ {6, 7, 8, 9, 10, 11, 12, 13, 14, 15} = {6, 7}
+Testing completed: UNIT COMPLIES
+
+Testing getDifference():
+∅ \ ∅ = ∅
+∅ \ {1} = ∅
+{2, 3} \ ∅ = {2, 3}
+{1} \ {2, 3} = {1}
+{2, 3} \ {3, 4, 5, 6, 7} = {2}
+{3, 4, 5, 6, 7} \ {6, 7, 8, 9, 10, 11, 12, 13, 14, 15} = {3, 4, 5}
+Testing completed: UNIT COMPLIES
+
+Testing isEquivalent():
+Testing completed: UNIT COMPLIES
+
+Testing isSubset():
+Testing completed: UNIT COMPLIES
+
+Testing isProperSubset():
+Testing completed: UNIT COMPLIES
+
+Testing isDisjointPair():
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5849== 
+==5849== HEAP SUMMARY:
+==5849==     in use at exit: 0 bytes in 0 blocks
+==5849==   total heap usage: 136 allocs, 136 frees, 2,488 bytes allocated
+==5849== 
+==5849== All heap blocks were freed -- no leaks are possible
+==5849== 
+==5849== For counts of detected and suppressed errors, rerun with: -v
+==5849== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
+$ valgrind ./bag
+==5850== Memcheck, a memory error detector
+==5850== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5850== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5850== Command: ./bag
+==5850== 
+Testing bag initialisation:
+Expected output: ∅
+Printed output:  ∅
+Testing completed: UNIT COMPLIES
+
+Testing insertMember(), getBagDimension() and getBagCardinality():
+Expected output: {-63, 2, 2, 5, 99, 99, 99, 99, 4209, 4209, 4209, 8888}
+Printed output:  {-63, 2, 2, 5, 99, 99, 99, 99, 4209, 4209, 4209, 8888}
+Testing completed: UNIT COMPLIES
+
+Testing isMember() and getMultiplicity():
+Expected output: {-63, 2, 2, 5, 99, 99, 99, 99, 4209, 4209, 4209, 8888}
+Printed output:  {-63, 2, 2, 5, 99, 99, 99, 99, 4209, 4209, 4209, 8888}
+Testing completed: UNIT COMPLIES
+
+Testing removeMember():
+Expected output: ∅
+Printed output:  ∅
+Testing completed: UNIT COMPLIES
+
+Testing getBagMin() and getBagMax():
+Expected output: {10}
+Printed output:  {10}
+Testing completed: UNIT COMPLIES
+
+Testing copyBag():
+Copy of an empty bag: ∅
+Copy of {1}: {1}
+Copy of {2, 3}: {2, 3}
+Copy of {3, 3, 3, 4, 5, 6, 7}: {3, 3, 3, 4, 5, 6, 7}
+Copy of {6, 6, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15}: {6, 6, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+Testing completed: UNIT COMPLIES
+
+Testing isSet() and getRootSet():
+Root set of an empty bag: ∅
+Root set of {1}: {1}
+Root set of {2, 3}: {2, 3}
+Root set of {3, 3, 3, 4, 5, 6, 7}: {3, 4, 5, 6, 7}
+Root set of {6, 6, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15}: {6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+Testing completed: UNIT COMPLIES
+
+Testing getMultisetUnion():
+∅ ∪ ∅ = ∅
+∅ ∪ {1} = {1}
+{2, 3} ∪ ∅ = {2, 3}
+{1} ∪ {2, 3} = {1, 2, 3}
+{2, 3} ∪ {3, 3, 3, 4, 5, 6, 7} = {2, 3, 3, 3, 4, 5, 6, 7}
+{3, 3, 3, 4, 5, 6, 7} ∪ {6, 6, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15} = {3, 3, 3, 4, 5, 6, 6, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+Testing completed: UNIT COMPLIES
+
+Testing getMultisetIntersection():
+∅ ∩ ∅ = ∅
+∅ ∩ {1} = ∅
+{2, 3} ∩ ∅ = ∅
+{1} ∩ {2, 3} = ∅
+{2, 3, 3} ∩ {3, 3, 3, 4, 5, 6, 7} = {3, 3}
+{3, 3, 3, 4, 5, 6, 6, 7} ∩ {6, 6, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15} = {6, 6, 7}
+Testing completed: UNIT COMPLIES
+
+Testing getMultisetDifference():
+∅ \ ∅ = ∅
+∅ \ {1} = ∅
+{2, 3} \ ∅ = {2, 3}
+{1} \ {2, 3} = {1}
+{2, 3} \ {3, 3, 3, 4, 5, 6, 7} = {2}
+{3, 3, 3, 4, 5, 6, 7} \ {6, 6, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15} = {3, 3, 3, 4, 5}
+Testing completed: UNIT COMPLIES
+
+Testing getMultisetSum():
+∅ ⨄  ∅ = ∅
+∅ ⨄  {1} = {1}
+{2, 3} ⨄  ∅ = {2, 3}
+{1} ⨄  {2, 3} = {1, 2, 3}
+{2, 3} ⨄  {3, 3, 3, 4, 5, 6, 7} = {2, 3, 3, 3, 3, 4, 5, 6, 7}
+{3, 3, 3, 4, 5, 6, 7} ⨄  {6, 6, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15} = {3, 3, 3, 4, 5, 6, 6, 6, 7, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+Testing completed: UNIT COMPLIES
+
+Testing isIdentical():
+Testing completed: UNIT COMPLIES
+
+Testing isSubmultiset():
+Testing completed: UNIT COMPLIES
+
+Testing isStrictSubmultiset():
+Testing completed: UNIT COMPLIES
+
+Testing isDisjointMultisetPair():
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5850== 
+==5850== HEAP SUMMARY:
+==5850==     in use at exit: 0 bytes in 0 blocks
+==5850==   total heap usage: 192 allocs, 192 frees, 5,008 bytes allocated
+==5850== 
+==5850== All heap blocks were freed -- no leaks are possible
+==5850== 
+==5850== For counts of detected and suppressed errors, rerun with: -v
+==5850== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
+$ valgrind ./heap
+==5851== Memcheck, a memory error detector
+==5851== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5851== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5851== Command: ./heap
+==5851== 
+Testing heap initialisation:
+Empty heap: (empty)
+Testing completed: UNIT COMPLIES
+
+Tesing insertHeapItem() and getHeapSize():
+Heap containing 5, 10, 15, 2 and 5:
+15 
+5 10 
+2 5 
+Heap containing 5, 10, 15, 2, 5, 7, 3, 1, 29 and 3:
+29 
+15 10 
+5 5 7 3 
+1 2 3 
+Testing completed: UNIT COMPLIES
+
+Tesing isInHeap():
+Testing completed: UNIT COMPLIES
+
+Tesing getHeapRoot() and removeHeapRoot():
+Heap containing 5, 10, 2, 5, 7, 3, 1 and 3:
+10 
+5 7 
+3 5 2 3 
+1 
+Heap containing 5, 2, 5, 3, 1, 3, 78, 42 and 4:
+78 
+42 5 
+5 1 2 3 
+3 4 
+Heap containing 2, 3, 1 and 3:
+3 
+2 3 
+1 
+Empty heap: (empty)
+Heap containing 22 and -66:
+22 
+-66 
+Testing completed: UNIT COMPLIES
+
+Testing heap expansion and contraction:
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5851== 
+==5851== HEAP SUMMARY:
+==5851==     in use at exit: 0 bytes in 0 blocks
+==5851==   total heap usage: 22 allocs, 22 frees, 10,732 bytes allocated
+==5851== 
+==5851== All heap blocks were freed -- no leaks are possible
+==5851== 
+==5851== For counts of detected and suppressed errors, rerun with: -v
+==5851== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
+$ valgrind ./priorityQueue
+==5852== Memcheck, a memory error detector
+==5852== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5852== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5852== Command: ./priorityQueue
+==5852== 
+Testing priority queue initialisation:
+Testing completed: UNIT COMPLIES
+
+Tesing priorityEnqueue() and getPQueueSize():
+Testing completed: UNIT COMPLIES
+
+Tesing peak() and priorityDequeue():
+Testing completed: UNIT COMPLIES
+
+Testing heap expansion and contraction:
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5852== 
+==5852== HEAP SUMMARY:
+==5852==     in use at exit: 0 bytes in 0 blocks
+==5852==   total heap usage: 22 allocs, 22 frees, 10,732 bytes allocated
+==5852== 
+==5852== All heap blocks were freed -- no leaks are possible
+==5852== 
+==5852== For counts of detected and suppressed errors, rerun with: -v
+==5852== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
+$ valgrind ./HashTable/htable
+==5853== Memcheck, a memory error detector
+==5853== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5853== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5853== Command: ./HashTable/htable
+==5853== 
+Testing hash table initialisation:
+Empty hash table:
+Slot  0: 
+Slot  1: 
+Slot  2: 
+Slot  3: 
+Slot  4: 
+Slot  5: 
+Slot  6: 
+Slot  7: 
+Slot  8: 
+Slot  9: 
+Testing completed: UNIT COMPLIES
+
+Testing insertHashElement() and getHashTableSize():
+Hash table containing 15 items:
+Slot  0: !@#$%^&*()
+Slot  1: -28
+Slot  2: 3.14, hello world
+Slot  3: 
+Slot  4: hash, ABC, 42
+Slot  5: _---_
+Slot  6: QWERTY
+Slot  7: 173, {[()]}, qwertyuiop, 0123456789
+Slot  8: 0, 666
+Slot  9: 
+Testing completed: UNIT COMPLIES
+
+Testing getHashTableElement():
+Testing completed: UNIT COMPLIES
+
+Testing removeHashElement():
+Hash table containing 2 items:
+Slot  0: 
+Slot  1: 
+Slot  2: 
+Slot  3: 
+Slot  4: 633
+Slot  5: 
+Slot  6: hash table
+Slot  7: 
+Slot  8: 
+Slot  9: 
+Testing completed: UNIT COMPLIES
+
+Testing hash table expansion:
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5853== 
+==5853== HEAP SUMMARY:
+==5853==     in use at exit: 0 bytes in 0 blocks
+==5853==   total heap usage: 653 allocs, 653 frees, 6,478 bytes allocated
+==5853== 
+==5853== All heap blocks were freed -- no leaks are possible
+==5853== 
+==5853== For counts of detected and suppressed errors, rerun with: -v
+==5853== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
+$ valgrind ./list
+==5854== Memcheck, a memory error detector
+==5854== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5854== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5854== Command: ./list
+==5854== 
+Testing list initialisation:
+Testing completed: UNIT COMPLIES
+
+Testing insertAt() and getNumNodes():
+Testing completed: UNIT COMPLIES
+
+Testing isInList():
+Testing completed: UNIT COMPLIES
+
+Testing getDataAt():
+Testing completed: UNIT COMPLIES
+
+Testing getFrequency():
+Testing completed: UNIT COMPLIES
+
+Testing removeAt():
+Testing completed: UNIT COMPLIES
+
+Testing showList():
+Expected output: [27]->[15]->X
+Printed  output: [27]->[15]->X
+Expected output: [27]->[-63]->[15]->X
+Printed  output: [27]->[-63]->[15]->X
+Expected output: [27]->[42]->[-63]->[15]->X
+Printed  output: [27]->[42]->[-63]->[15]->X
+Expected output: [27]->[42]->[9999]->[-63]->[15]->X
+Printed  output: [27]->[42]->[9999]->[-63]->[15]->X
+Expected output: [555]->[27]->[42]->[9999]->[-63]->[15]->X
+Printed  output: [555]->[27]->[42]->[9999]->[-63]->[15]->X
+Expected output: [555]->[27]->[42]->[9999]->[-63]->[1]->[15]->X
+Printed  output: [555]->[27]->[42]->[9999]->[-63]->[1]->[15]->X
+Expected output: [555]->[42]->[9999]->[-63]->[1]->[15]->X
+Printed  output: [555]->[42]->[9999]->[-63]->[1]->[15]->X
+Expected output: [42]->[9999]->[-63]->[1]->[15]->X
+Printed  output: [42]->[9999]->[-63]->[1]->[15]->X
+Expected output: [42]->[9999]->[-63]->[1]->X
+Printed  output: [42]->[9999]->[-63]->[1]->X
+Expected output: [42]->[9999]->[1]->X
+Printed  output: [42]->[9999]->[1]->X
+Expected output: [42]->[9999]->X
+Printed  output: [42]->[9999]->X
+Expected output: [42]->X
+Printed  output: [42]->X
+Expected output: X
+Printed  output: X
+Testing completed: UNIT COMPLIES
+
+Testing getMinimalItem() and getMaximalItem():
+Testing completed: UNIT COMPLIES
+
+Testing isSorted():
+Testing completed: UNIT COMPLIES
+
+Testing insertAtHead() and insertAtTail():
+Testing completed: UNIT COMPLIES
+
+Testing removeHead() and removeTail():
+Testing completed: UNIT COMPLIES
+
+Testing sortedInsert():
+Testing completed: UNIT COMPLIES
+
+Testing removeAll():
+Testing completed: UNIT COMPLIES
+
+Testing isSublist():
+Testing completed: UNIT COMPLIES
+
+Testing isStrictSublist():
+Testing completed: UNIT COMPLIES
+
+Testing copyList():
+Testing completed: UNIT COMPLIES
+
+Testing convertToArray():
+Testing completed: UNIT COMPLIES
+
+Testing convertToList():
+Testing completed: UNIT COMPLIES
+
+Testing map():
+Testing completed: UNIT COMPLIES
+
+Testing fold():
+Testing completed: UNIT COMPLIES
+
+Testing filter():
+Testing completed: UNIT COMPLIES
+
+Testing shiftHead():
+Testing completed: UNIT COMPLIES
+
+Testing shiftTail():
+Testing completed: UNIT COMPLIES
+
+Testing swapHeadTail():
+Testing completed: UNIT COMPLIES
+
+Testing reverseList():
+Testing completed: UNIT COMPLIES
+
+Testing pairwiseSwap():
+Testing completed: UNIT COMPLIES
+
+Testing removeDuplicates():
+Testing completed: UNIT COMPLIES
+
+Testing sortList():
+Testing completed: UNIT COMPLIES
+
+Testing splitList():
+Testing completed: UNIT COMPLIES
+
+Testing splitAt():
+Testing completed: UNIT COMPLIES
+
+Testing alternatingSplit():
+Testing completed: UNIT COMPLIES
+
+Testing concatenate():
+Testing completed: UNIT COMPLIES
+
+Testing sortedMerge():
+Testing completed: UNIT COMPLIES
+
+Testing zipLists():
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5854== 
+==5854== HEAP SUMMARY:
+==5854==     in use at exit: 0 bytes in 0 blocks
+==5854==   total heap usage: 1,988 allocs, 1,988 frees, 33,956 bytes allocated
+==5854== 
+==5854== All heap blocks were freed -- no leaks are possible
+==5854== 
+==5854== For counts of detected and suppressed errors, rerun with: -v
+==5854== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
+$ valgrind ./complex
+==5855== Memcheck, a memory error detector
+==5855== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5855== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5855== Command: ./complex
+==5855== 
+Testing complex number initialisation:
+Testing completed: UNIT COMPLIES
+
+Testing copyComplex() and isEqual():
+Testing completed: UNIT COMPLIES
+
+Testing showComplex():
+Cartesian and polar representation of (0, 0):
+Cartesian form: 0 + 0i
+Cartesian and polar representation of (1, 1):
+Cartesian form: 1 + 1i
+Trigonometric polar form: 1.4 * (cos(0.79) + i * sin(0.79))
+Exponential polar form: 1.4 * exp(i0.79)
+Cartesian and polar representation of (-2, 2):
+Cartesian form: -2 + 2i
+Trigonometric polar form: 2.8 * (cos(2.4) + i * sin(2.4))
+Exponential polar form: 2.8 * exp(i2.4)
+Cartesian and polar representation of (3, 4):
+Cartesian form: 3 + 4i
+Trigonometric polar form: 5 * (cos(0.93) + i * sin(0.93))
+Exponential polar form: 5 * exp(i0.93)
+Cartesian and polar representation of (-2, -6):
+Cartesian form: -2 - 6i
+Trigonometric polar form: 6.3 * (cos(-1.9) + i * sin(-1.9))
+Exponential polar form: 6.3 * exp(i-1.9)
+Cartesian and polar representation of (1, -1):
+Cartesian form: 1 - 1i
+Trigonometric polar form: 1.4 * (cos(-0.79) + i * sin(-0.79))
+Exponential polar form: 1.4 * exp(i-0.79)
+Cartesian and polar representation of (0, 2):
+Cartesian form: 0 + 2i
+Trigonometric polar form: 2 * (cos(1.6) + i * sin(1.6))
+Exponential polar form: 2 * exp(i1.6)
+Cartesian and polar representation of (1, 0):
+Cartesian form: 1 + 0i
+Trigonometric polar form: 1 * (cos(0) + i * sin(0))
+Exponential polar form: 1 * exp(i0)
+Testing completed: UNIT COMPLIES
+
+Testing getComplexConjugate():
+Testing completed: UNIT COMPLIES
+
+Testing add():
+Testing completed: UNIT COMPLIES
+
+Testing subtract():
+Testing completed: UNIT COMPLIES
+
+Testing multiply():
+Testing completed: UNIT COMPLIES
+
+Testing getInverse():
+Testing completed: UNIT COMPLIES
+
+Testing divide():
+Testing completed: UNIT COMPLIES
+
+Testing getModulus() and getArgument():
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5855== 
+==5855== HEAP SUMMARY:
+==5855==     in use at exit: 0 bytes in 0 blocks
+==5855==   total heap usage: 71 allocs, 71 frees, 2,272 bytes allocated
+==5855== 
+==5855== All heap blocks were freed -- no leaks are possible
+==5855== 
+==5855== For counts of detected and suppressed errors, rerun with: -v
+==5855== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
+$ valgrind ./Trie/trie
+==5856== Memcheck, a memory error detector
+==5856== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5856== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5856== Command: ./Trie/trie
+==5856== 
+Testing trie initialisation:
+Empty trie:
+Testing completed: UNIT COMPLIES
+
+Testing insertItem() and getTrieSize():
+Trie containing 12 keys:
+ace
+aces
+app
+apply
+ape
+apes
+east
+ear
+earl
+early
+size
+generate
+Trie containing 16 keys:
+ace
+aces
+accept
+app
+apply
+ape
+apes
+east
+eastern
+ear
+earl
+early
+earth
+size
+generate
+beach
+Testing completed: UNIT COMPLIES
+
+Testing getItemInTrie():
+Testing completed: UNIT COMPLIES
+
+Testing removeItem():
+Trie containing 10 keys:
+aces
+accept
+app
+apply
+apes
+ear
+earl
+early
+size
+generate
+Trie containing 5 keys:
+aces
+apple
+amplify
+earthling
+size
+Trie containing 8 keys:
+ape
+bat
+bad
+cat
+cap
+tap
+mat
+rat
+Testing completed: UNIT COMPLIES
+
+Testing completed: PROGRAM COMPLIES
+==5856== 
+==5856== HEAP SUMMARY:
+==5856==     in use at exit: 0 bytes in 0 blocks
+==5856==   total heap usage: 200 allocs, 200 frees, 3,931 bytes allocated
+==5856== 
+==5856== All heap blocks were freed -- no leaks are possible
+==5856== 
+==5856== For counts of detected and suppressed errors, rerun with: -v
+==5856== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+################################################################################
